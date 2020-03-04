@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    nav {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        position: fixed;
+    }
+    .menu-items {
+        display: inline-block;
+        margin: 0 auto;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0);
+    }
+    .menu-item {
+        display: inline-block;
+        padding: 20px;
+        
+    }
+    .altura {
+        height: 1000px;
+        width: 100%;
+        background: red;
+        top: 0;
+    }
+    .altura-2 {
+        background: blue;
+        height: 300px;
+        width: 100%;
+    }
+
+</style>
+<body>
+    <nav>
+        <ul class="menu-items" id="top-bar">
+            <li class="menu-item">
+                Quem Somos
+            </li>
+            <li class="menu-item">
+                Soluções
+            </li>
+            <li class="menu-item">
+                Master Partner
+            </li>
+            <li class="menu-item">
+                Contato
+            </li>
+        </ul>
+    </nav>
+    <div class="altura">
+        span
+    </div>
+    <div class="altura-2">
+        span
+    </div>
+    <script>
+        (function(){
+          var topBarEl = document.querySelector('#top-bar');
+          function scrollLogoEffect() {
+            var x = window.pageYOffset / 150;
+            requestAnimationFrame(function() {
+              topBarEl.querySelectorAll('li').forEach(function(li){
+            li.style.filter = 'invert('+ x +')';
+              topBarEl.style.backgroundColor = 'rgba(255, 255, 255, '+ x +')';
+                })
+            });
+          }
+          window.addEventListener('scroll', scrollLogoEffect);
+          scrollLogoEffect();
+        }());
+        </script>
+
+</body>
+</html>
